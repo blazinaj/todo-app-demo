@@ -6,8 +6,11 @@ export const useTodoList = () => {
     return {
         todoList,
         setTodoList,
-        removeByTitle: useCallback(index =>
-            setTodoList(list => list.filter(item => item && item.title !== index))
+        removeByTitle: useCallback(title =>
+            setTodoList(list => list.filter(item => item && item.title !== title))
+        ),
+        removeById: useCallback(id =>
+            setTodoList(list => list.filter(item => item && item.id !== id))
         ),
         addTodo: useCallback(newTodo =>
             setTodoList(prev => [...prev, newTodo])

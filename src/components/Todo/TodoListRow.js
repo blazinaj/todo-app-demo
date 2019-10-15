@@ -9,7 +9,12 @@ const TodoListRow = (props) => {
             {/*<Image avatar alt={"image here.."} />*/}
             <Row>
                 <Col sm={2}>
-                    <CustomInput type="checkbox" id="complete_todo" label="Done" onClick={() => props.todoHook.removeByTitle(props.todo.title)} />
+                    <CustomInput
+                        type="checkbox"
+                        id={"complete_todo" + props.todo.id}
+                        label="Done"
+                        onClick={() => props.todoHook.removeById(props.todo.id)}
+                    />
                 </Col>
                 <Col sm={10}>
                     <ListGroupItemHeading>
@@ -24,7 +29,6 @@ const TodoListRow = (props) => {
                     </ListGroupItemText>
                 </Col>
             </Row>
-
         </ListGroupItem>
     )
 };

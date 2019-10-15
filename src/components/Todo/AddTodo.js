@@ -8,7 +8,13 @@ const AddTodo = (props) => {
     const [description, setDescription] = useState('');
 
     const submit = () => {
-        props.todoHook && props.todoHook.addTodo({title: title, description: description});
+        props.todoHook && props.todoHook.addTodo(
+            {
+                id: new Date(),
+                title: title,
+                description: description
+            }
+        );
         props.toggleModal && props.toggleModal();
     };
 

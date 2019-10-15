@@ -35,15 +35,16 @@ const TodoList = (props) => {
                         <ListGroupItem
                             tag="button"
                             color="success"
-                            onClick={() => modalHook.setModalIsOpen(true)}>
+                            onClick={() => modalHook.setModalIsOpen(true)}
+                        >
                             Create new TODO
                         </ListGroupItem>
                         {
                             props.todoHook &&
                             props.todoHook.todoList &&
                             props.todoHook.todoList
-                                .map((listItem, index) =>
-                                    <TodoListRow key={index + listItem.title} todo={listItem} todoHook={props.todoHook}/>
+                                .map((listItem) =>
+                                    <TodoListRow key={listItem.id} todo={listItem} todoHook={props.todoHook}/>
                             )
                         }
                     </ListGroup>
