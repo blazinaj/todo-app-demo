@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from "react";
+import {useLocalStorage} from "./useLocalStorage";
 
 export const useTodoList = () => {
-    const [todoList, setTodoList] = useState([]);
+    const [todoList, setTodoList] = useLocalStorage('todoList', []);
 
     return {
         todoList,
